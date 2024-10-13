@@ -9,6 +9,9 @@ COPY build.gradle settings.gradle gradlew ./
 COPY gradle ./gradle
 COPY src ./src
 
+# Cambiar permisos del script gradlew
+RUN chmod +x gradlew
+
 # Construir el proyecto
 RUN ./gradlew build -x test
 
